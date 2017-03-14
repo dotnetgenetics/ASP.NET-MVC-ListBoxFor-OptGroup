@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SelectionSuccess</title>
+</head>
+<body>
+    <div> 
+        @if (ViewData["SelectedStates"] != null)
+        {
+            <h2>Selected Products</h2>
+            <ul>
+                @foreach (var item in ViewData["SelectedStates"] as List<string>)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@model ASPMVCListBoxForOptGroup.Models.CountriesStatesViewModel
+@using ASPMVCListBoxForOptGroup.Helpers
+
+@using (Html.BeginForm("SaveEntry", "Home", FormMethod.Post))
+{
+    @Html.ListBoxFor(m => m.SelectedStates, Model.CountriesAndStates, new { Multiple = "multiple", size = (Model.CountriesAndStates.Sum(t => t.Value.Count()) + Model.CountriesAndStates.Keys.Count).ToString() })
+    <br />
+    <input name="Save" type="submit" value="Save" />
+}
